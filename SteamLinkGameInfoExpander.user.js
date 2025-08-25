@@ -6,6 +6,8 @@
 // @version      1.2
 // @author       FallenStar
 // @description  Adds a [+] button next to Steam links to expand game info with price, screenshots & trailers
+// @updateURL 	 https://github.com/FallenStar08/SteamLinkGameInfoExpander/raw/refs/heads/main/SteamLinkGameInfoExpander.user.js
+// @downloadURL  https://github.com/FallenStar08/SteamLinkGameInfoExpander/raw/refs/heads/main/SteamLinkGameInfoExpander.user.js
 // ==/UserScript==
 
 (function () {
