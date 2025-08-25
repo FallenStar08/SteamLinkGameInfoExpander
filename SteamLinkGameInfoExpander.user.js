@@ -3,7 +3,7 @@
 // @namespace    Violentmonkey Scripts
 // @match        *://*/*
 // @grant        GM_xmlhttpRequest
-// @version      1.2
+// @version      1.2.1
 // @author       FallenStar
 // @description  Adds a [+] button next to Steam links to expand game info with price, screenshots & trailers
 // @updateURL 	 https://github.com/FallenStar08/SteamLinkGameInfoExpander/raw/refs/heads/main/SteamLinkGameInfoExpander.user.js
@@ -51,7 +51,7 @@
 		},
 	};
 
-	const steamRegex = /https:\/\/store\.steampowered\.com\/app\/(\d+)/;
+	const steamRegex = /https?:\/\/store\.steampowered\.com\/app\/(\d+)/;
 
 	//ANCHOR NEW LINKS
 	const observer = new MutationObserver(scanLinks);
