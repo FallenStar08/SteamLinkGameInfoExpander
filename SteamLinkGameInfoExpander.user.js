@@ -3,7 +3,7 @@
 // @namespace    Violentmonkey Scripts
 // @match        *://*/*
 // @grant        GM_xmlhttpRequest
-// @version      1.2.2
+// @version      1.2.3
 // @author       FallenStar
 // @description  Adds a [+] button next to Steam links to expand game info with price, screenshots & trailers
 // @updateURL 	 https://github.com/FallenStar08/SteamLinkGameInfoExpander/raw/refs/heads/main/SteamLinkGameInfoExpander.user.js
@@ -145,38 +145,9 @@
 					const items = [];
 					if (game.movies) {
 						game.movies.forEach((m) => {
-							// Create a placeholder video element first
-							const videoId = items.length;
-							items.push(
-								`<video controls style="max-width:100%;max-height:${STEAM_STYLE.carousel.height};" id="steam-video-${videoId}">Loading...</video>`
-							);
-
-							// Fetch via GM_xmlhttpRequest as blob
-							GM_xmlhttpRequest({
-								method: "GET",
-								url: m.mp4.max,
-								responseType: "blob",
-								onload: (res) => {
-									const blobUrl = URL.createObjectURL(
-										res.response
-									);
-									const videoEl = document.getElementById(
-										`steam-video-${videoId}`
-									);
-									if (videoEl) {
-										videoEl.src = blobUrl;
-										videoEl.textContent = "";
-									}
-								},
-								onerror: () => {
-									const videoEl = document.getElementById(
-										`steam-video-${videoId}`
-									);
-									if (videoEl)
-										videoEl.textContent =
-											"Failed to load video.";
-								},
-							});
+							items.push(`<video controls style="max-width:100%;max-height:${STEAM_STYLE.carousel.height};">
+                                <source src="${m.mp4.max}" type="video/mp4">
+                                </video>`);
 						});
 					}
 					if (game.screenshots) {
