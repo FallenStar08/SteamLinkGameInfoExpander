@@ -39,7 +39,7 @@ All styled to match Steam’s dark bluish theme.
 
 2. Add the script:
 
-    - [Click here to install](./SteamLinkGameInfoExpander.user.js)
+    - [Click here to install](https://github.com/FallenStar08/SteamLinkGameInfoExpander/raw/refs/heads/main/SteamLinkGameInfoExpander.user.js)
 
 3. Visit any site with Steam links (e.g. Reddit), and click the `[+]` next to a Steam link.
 
